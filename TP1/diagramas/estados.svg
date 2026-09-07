@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="481" height="210" preserveAspectRatio="xMinYMin meet" viewBox="0 0 481 210" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="481" height="210"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-210)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="0" y="0" width="481" height="210" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<rect x="0.5" y="120" width="184.5" height="42" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="66.8720703125" y="145" style="font-family: Calibri-Bold; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,290) scale(1,-1)">PENDIENTE</text>
+			<rect x="280" y="120" width="200.5" height="42" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="336.97509765625" y="145" style="font-family: Calibri-Bold; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,290) scale(1,-1)">EN_TRATAMIENTO</text>
+			<rect x="280" y="20" width="200.5" height="42" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="358.33056640625" y="45" style="font-family: Calibri-Bold; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,90) scale(1,-1)">CERRADA</text>
+			<path d="M 185,141 L 280,141 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<polygon points="280 141, 274.4736 143.3365, 274.4736 138.6635" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.5; fill: rgb(0%,0%,0%); fill-rule: evenodd;"/>
+			<text x="167.706298828125" y="193" style="font-family: Calibri; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,386) scale(1,-1)">Responsable + fecha objetivo</text>
+			<text x="203.46435546875" y="179" style="font-family: Calibri; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,358) scale(1,-1)">y comentario</text>
+			<path d="M 380,120 L 380,62 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<polygon points="380 62, 382.3365 67.52637, 377.6635 67.52637" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.5; fill: rgb(0%,0%,0%); fill-rule: evenodd;"/>
+			<text x="282" y="96" style="font-family: Calibri; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,192) scale(1,-1)">Verificación técnica</text>
+			<text x="282" y="82" style="font-family: Calibri; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,164) scale(1,-1)">y comentario</text>
+			<path d="M 280,41 L 93,41 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<path d="M 93,41 L 93,120 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<polygon points="93 120, 90.66349 114.4736, 95.33651 114.4736" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.5; fill: rgb(0%,0%,0%); fill-rule: evenodd;"/>
+			<text x="107" y="75" style="font-family: Calibri; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,150) scale(1,-1)">Reapertura justificada</text>
+			<text x="107" y="61" style="font-family: Calibri; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,122) scale(1,-1)">en el comentario</text>
+		</g>
+	</g>
+</svg>

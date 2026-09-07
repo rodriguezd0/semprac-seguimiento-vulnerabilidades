@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="481" height="570" preserveAspectRatio="xMinYMin meet" viewBox="0 0 481 570" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="481" height="570"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-570)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="0" y="0" width="481" height="570" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<rect x="104" y="8" width="303" height="554" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="180.726318359375" y="541" style="font-family: Calibri-Bold; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,1082) scale(1,-1)">Seguimiento de vulnerabilidades</text>
+			<path d="M 66,289 L 108,516 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<ellipse cx="255.5" cy="516.0" rx="147.5" ry="16.0" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="203.572265625" y="512" style="font-family: Calibri; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,1024) scale(1,-1)">CU01 Gestionar activos</text>
+			<path d="M 66,289 L 108,474 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<ellipse cx="255.5" cy="474.0" rx="147.5" ry="16.0" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="189.862548828125" y="470" style="font-family: Calibri; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,940) scale(1,-1)">CU02 Gestionar responsables</text>
+			<path d="M 66,289 L 108,432 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<ellipse cx="255.5" cy="432.0" rx="147.5" ry="16.0" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="189.035400390625" y="428" style="font-family: Calibri; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,856) scale(1,-1)">CU03 Registrar vulnerabilidad</text>
+			<path d="M 66,289 L 108,390 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<ellipse cx="255.5" cy="390.0" rx="147.5" ry="16.0" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="197.19140625" y="386" style="font-family: Calibri; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,772) scale(1,-1)">CU04 Asignar responsable</text>
+			<path d="M 66,289 L 108,348 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<path d="M 429,289 L 403,348 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<ellipse cx="255.5" cy="348.0" rx="147.5" ry="16.0" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="182.7646484375" y="344" style="font-family: Calibri; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,688) scale(1,-1)">CU05 Consultar vulnerabilidades</text>
+			<path d="M 66,289 L 108,306 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<ellipse cx="255.5" cy="306.0" rx="147.5" ry="16.0" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="207.157470703125" y="302" style="font-family: Calibri; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,604) scale(1,-1)">CU06 Cambiar estado</text>
+			<path d="M 66,289 L 108,264 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<path d="M 429,289 L 403,264 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<ellipse cx="255.5" cy="264.0" rx="147.5" ry="16.0" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="201.4345703125" y="260" style="font-family: Calibri; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,520) scale(1,-1)">CU07 Consultar historial</text>
+			<path d="M 66,289 L 108,222 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<ellipse cx="255.5" cy="222.0" rx="147.5" ry="16.0" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="206.86474609375" y="218" style="font-family: Calibri; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,436) scale(1,-1)">CU08 Exportar listado</text>
+			<path d="M 66,289 L 108,180 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<ellipse cx="255.5" cy="180.0" rx="147.5" ry="16.0" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="197.01953125" y="176" style="font-family: Calibri; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,352) scale(1,-1)">CU09 Gestionar proyectos</text>
+			<path d="M 66,289 L 108,138 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<ellipse cx="255.5" cy="138.0" rx="147.5" ry="16.0" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="200.37646484375" y="134" style="font-family: Calibri; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,268) scale(1,-1)">CU10 Gestionar usuarios</text>
+			<path d="M 66,289 L 108,96 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<path d="M 429,289 L 403,96 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<ellipse cx="255.5" cy="96.0" rx="147.5" ry="16.0" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="197.634521484375" y="92" style="font-family: Calibri; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,184) scale(1,-1)">CU11 Iniciar/cerrar sesión</text>
+			<path d="M 66,289 L 108,54 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<ellipse cx="255.5" cy="54.0" rx="147.5" ry="16.0" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="212.01025390625" y="50" style="font-family: Calibri; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,100) scale(1,-1)">CU12 Calcular CVSS</text>
+			<circle cx="42" cy="314" r="11" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<path d="M 42,303 L 42,268 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<path d="M 18,289 L 66,289 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<path d="M 42,268 L 23,244 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<path d="M 42,268 L 61,244 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<text x="9.867431640625" y="224" style="font-family: Calibri; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,448) scale(1,-1)">Administrador</text>
+			<circle cx="453" cy="314" r="11" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<path d="M 453,303 L 453,268 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<path d="M 429,289 L 477,289 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<path d="M 453,268 L 434,244 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<path d="M 453,268 L 472,244 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<text x="437.337890625" y="224" style="font-family: Calibri; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,448) scale(1,-1)">Cliente</text>
+		</g>
+	</g>
+</svg>

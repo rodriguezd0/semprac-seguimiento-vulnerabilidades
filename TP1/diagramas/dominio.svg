@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="481" height="420" preserveAspectRatio="xMinYMin meet" viewBox="0 0 481 420" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="481" height="420"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-420)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="0" y="0" width="481" height="420" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<rect x="0.5" y="330" width="204.5" height="82" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="85.0361328125" y="395" style="font-family: Calibri-Bold; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,790) scale(1,-1)">Usuario</text>
+			<path d="M 0.5,388 L 205,388 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<text x="8.5" y="371" style="font-family: Calibri; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,742) scale(1,-1)">Login, rol y estado activo</text>
+			<text x="8.5" y="357" style="font-family: Calibri; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,714) scale(1,-1)">ADMINISTRADOR o CLIENTE</text>
+			<rect x="276" y="330" width="204.5" height="82" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="357.8720703125" y="395" style="font-family: Calibri-Bold; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,790) scale(1,-1)">Proyecto</text>
+			<path d="M 276,388 L 480.5,388 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<text x="284" y="371" style="font-family: Calibri; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,742) scale(1,-1)">Nombre y descripción</text>
+			<text x="284" y="357" style="font-family: Calibri; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,714) scale(1,-1)">Cliente obligatorio (CLIENTE)</text>
+			<rect x="276" y="190" width="204.5" height="82" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="363.799072265625" y="255" style="font-family: Calibri-Bold; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,510) scale(1,-1)">Activo</text>
+			<path d="M 276,248 L 480.5,248 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<text x="284" y="231" style="font-family: Calibri; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,462) scale(1,-1)">Nombre y descripción</text>
+			<text x="284" y="217" style="font-family: Calibri; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,434) scale(1,-1)">Pertenece a un proyecto</text>
+			<rect x="0.5" y="155" width="204.5" height="150" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="69.183349609375" y="288" style="font-family: Calibri-Bold; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,576) scale(1,-1)">Vulnerabilidad</text>
+			<path d="M 0.5,281 L 205,281 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<text x="8.5" y="264" style="font-family: Calibri; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,528) scale(1,-1)">Título y descripción</text>
+			<text x="8.5" y="250" style="font-family: Calibri; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,500) scale(1,-1)">Tipo y elemento</text>
+			<text x="8.5" y="236" style="font-family: Calibri; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,472) scale(1,-1)">Vector CVSS / puntos opcionales</text>
+			<text x="8.5" y="222" style="font-family: Calibri; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,444) scale(1,-1)">Estado y fecha de detección</text>
+			<text x="8.5" y="208" style="font-family: Calibri; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,416) scale(1,-1)">Responsable opcional</text>
+			<text x="8.5" y="194" style="font-family: Calibri; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,388) scale(1,-1)">Fecha objetivo opcional</text>
+			<rect x="0.5" y="5" width="204.5" height="95" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="74.06298828125" y="83" style="font-family: Calibri-Bold; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,166) scale(1,-1)">Seguimiento</text>
+			<path d="M 0.5,76 L 205,76 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<text x="8.5" y="59" style="font-family: Calibri; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,118) scale(1,-1)">Momento de la transición</text>
+			<text x="8.5" y="45" style="font-family: Calibri; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,90) scale(1,-1)">Estados anterior y nuevo</text>
+			<text x="8.5" y="31" style="font-family: Calibri; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,62) scale(1,-1)">Comentario</text>
+			<rect x="276" y="5" width="204.5" height="85" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="349.350830078125" y="73" style="font-family: Calibri-Bold; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,146) scale(1,-1)">Responsable</text>
+			<path d="M 276,66 L 480.5,66 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<text x="284" y="49" style="font-family: Calibri; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,98) scale(1,-1)">Nombre de la persona</text>
+			<text x="284" y="35" style="font-family: Calibri; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,70) scale(1,-1)">Encargada de la corrección</text>
+			<text x="284" y="21" style="font-family: Calibri; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,42) scale(1,-1)">Catálogo global</text>
+			<path d="M 205,368 L 276,368 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<text x="211" y="376" style="font-family: Calibri; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,752) scale(1,-1)">1</text>
+			<text x="250" y="352" style="font-family: Calibri; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,704) scale(1,-1)">0..*</text>
+			<path d="M 378,330 L 378,272 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<text x="386" y="314" style="font-family: Calibri; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,628) scale(1,-1)">1</text>
+			<text x="386" y="279" style="font-family: Calibri; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,558) scale(1,-1)">0..*</text>
+			<path d="M 205,231 L 276,231 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<text x="262" y="239" style="font-family: Calibri; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,478) scale(1,-1)">1</text>
+			<text x="211" y="215" style="font-family: Calibri; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,430) scale(1,-1)">0..*</text>
+			<path d="M 102,155 L 102,100 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<text x="110" y="139" style="font-family: Calibri; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,278) scale(1,-1)">1</text>
+			<text x="110" y="109" style="font-family: Calibri; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,218) scale(1,-1)">0..*</text>
+			<path d="M 276,47 L 240,47 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<path d="M 240,47 L 240,175 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<path d="M 240,175 L 205,175 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<text x="249" y="55" style="font-family: Calibri; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,110) scale(1,-1)">0..1</text>
+			<text x="211" y="183" style="font-family: Calibri; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,366) scale(1,-1)">0..*</text>
+		</g>
+	</g>
+</svg>
