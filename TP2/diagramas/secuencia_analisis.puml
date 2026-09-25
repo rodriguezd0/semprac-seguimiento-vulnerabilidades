@@ -1,0 +1,41 @@
+@startuml secuencia_analisis
+!include estilo.iuml
+skinparam sequenceMessageAlign center
+hide footbox
+actor "Administrador" as A
+boundary "Pantalla de\ncambio de estado" as P
+control "Gestor de\ncambio de estado" as C
+entity "Vulnerabilidad" as V
+entity "Seguimiento" as S
+
+A -> P : selecciona el hallazgo
+activate P
+P -> C : pide el estado actual
+activate C
+C -> V : consulta estado y asignación
+activate V
+V --> C : estado, responsable y fecha objetivo
+deactivate V
+C --> P : estado y transiciones posibles
+deactivate C
+P --> A : muestra estado y opciones
+A -> P : elige el nuevo estado y escribe el comentario
+P -> C : solicita el cambio
+activate C
+C -> C : verifica rol, transición,\nasignación y comentario
+alt cambio válido
+  C -> V : actualiza el estado
+  activate V
+  deactivate V
+  C -> S : registra seguimiento\n(estado anterior, nuevo, comentario)
+  activate S
+  deactivate S
+  C --> P : confirma el cambio
+  P --> A : muestra la confirmación
+else transición inválida, falta asignación o comentario vacío
+  C --> P : informa el motivo del rechazo
+  P --> A : muestra el mensaje (no hay cambios)
+end
+deactivate C
+deactivate P
+@enduml

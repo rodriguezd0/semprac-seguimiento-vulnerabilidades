@@ -1,0 +1,91 @@
+@startuml clases_diseno_modelo
+!include estilo.iuml
+skinparam classAttributeIconSize 0
+hide circle
+skinparam nodesep 75
+skinparam class {
+  BorderColor black
+  BackgroundColor white
+}
+package modelo {
+  abstract class Usuario {
+    - idUsuario : int
+    - nombreAcceso : String
+    - nombreCompleto : String
+    - claveHash : String
+    - sal : String
+    - activo : boolean
+    + verificarClave(clave : String) : boolean
+    + {abstract} puedeGestionar() : boolean
+  }
+  class Administrador {
+    + puedeGestionar() : boolean
+  }
+  class Cliente {
+    + puedeGestionar() : boolean
+  }
+  class Proyecto {
+    - idProyecto : int
+    - nombre : String
+    - descripcion : String
+    - idCliente : int
+  }
+  class Activo {
+    - idActivo : int
+    - idProyecto : int
+    - nombre : String
+    - tipo : String
+    - descripcion : String
+  }
+  class Responsable {
+    - idResponsable : int
+    - nombre : String
+    - contacto : String
+  }
+  class Vulnerabilidad {
+    - idVulnerabilidad : int
+    - idActivo : int
+    - idResponsable : Integer
+    - titulo : String
+    - descripcion : String
+    - tipo : String
+    - elementoAfectado : String
+    - fechaDeteccion : LocalDate
+    - fechaObjetivo : LocalDate
+    - estado : EstadoVulnerabilidad
+    - vectorCvss : String
+    + asignar(idResponsable : Integer, fechaObjetivo : LocalDate) : void
+    + validarCambioEstado(nuevo : EstadoVulnerabilidad, comentario : String) : void
+    + cambiarEstado(nuevo : EstadoVulnerabilidad, comentario : String) : EstadoVulnerabilidad
+    + getPuntaje() : Double
+  }
+  enum EstadoVulnerabilidad {
+    PENDIENTE
+    EN_TRATAMIENTO
+    CERRADA
+    + puedePasarA(destino : EstadoVulnerabilidad) : boolean
+  }
+  class Seguimiento {
+    - idSeguimiento : int
+    - idVulnerabilidad : int
+    - idUsuario : int
+    - fechaHora : LocalDateTime
+    - estadoAnterior : EstadoVulnerabilidad
+    - estadoNuevo : EstadoVulnerabilidad
+    - comentario : String
+  }
+  class CalculadoraCvss31 <<utilidad>> {
+    + {static} calcularPuntaje(vector : String) : double
+    + {static} categoria(puntaje : Double) : String
+  }
+}
+Usuario <|-- Administrador
+Usuario <|-- Cliente
+Cliente "1" -right- "0..*" Proyecto : cliente
+Proyecto "1" -right- "0..*" Activo
+Activo "1" -down- "0..*" Vulnerabilidad
+Vulnerabilidad "0..*" -right- "0..1" Responsable
+Vulnerabilidad "1" -left- "0..*" Seguimiento
+Vulnerabilidad -down-> EstadoVulnerabilidad
+Vulnerabilidad .down.> CalculadoraCvss31 : usa
+@enduml

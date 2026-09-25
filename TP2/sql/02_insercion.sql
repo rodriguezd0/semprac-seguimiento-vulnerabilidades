@@ -1,0 +1,74 @@
+-- ============================================================
+-- Sistema de seguimiento de vulnerabilidades por proyecto
+-- 02_insercion.sql: datos de prueba FICTICIOS
+-- Autor: Rodríguez, Daniel Sebastián (legajo VINF016869)
+-- Ningún hallazgo corresponde a sistemas reales de la organización.
+-- Claves de prueba (solo entorno local): Admin.2026, Web.2026, Expedientes.2026
+-- ============================================================
+USE vulnerabilidades_db;
+
+INSERT INTO usuario (nombre_acceso, nombre_completo, clave_hash, sal, rol) VALUES
+('dsrodriguez', 'Daniel Sebastián Rodríguez',
+ 'ccf068aaeee4b504339ce3006e5e374986c3e2632dd11a4a27b9084073cb2d54', '4de738ee2fd78daabfcc4cc5fb5084f1', 'ADMINISTRADOR'),
+('ref.web', 'Referente del portal web',
+ 'ded88dca84b2ce0fff941cfc62f6da70b9a2571a767460b09d00db8f6bfaa86c', '5041f9ce24d6ec8d4388bb75641fba53', 'CLIENTE'),
+('ref.expedientes', 'Referente de gestión de expedientes',
+ 'bf38850a3b43347d28960739b447e9277114e98c15838c830ce43cfc1074ee24', '77a37b66957a42e77efcaa2c7790d4ec', 'CLIENTE');
+
+-- El cliente 3 tiene dos proyectos asignados.
+INSERT INTO proyecto (nombre, descripcion, id_cliente) VALUES
+('Portal web institucional',   'Sitio público y formularios de contacto', 2),
+('Gestión de expedientes',     'Aplicación interna de seguimiento de expedientes', 3),
+('Infraestructura de oficina', 'Red interna, respaldos y equipos compartidos', 3);
+
+INSERT INTO activo (id_proyecto, nombre, tipo, descripcion) VALUES
+(1, 'Servidor web',                 'Servidor',      'Apache que publica el sitio institucional'),
+(1, 'Formulario de contacto',       'Aplicación',    'Formulario público del sitio'),
+(2, 'Aplicación de expedientes',    'Aplicación',    'Módulo web de búsqueda y carga'),
+(2, 'Base de datos de expedientes', 'Base de datos', 'Servidor MySQL de la aplicación'),
+(3, 'NAS de respaldos',             'Equipo',        'Almacenamiento de copias de seguridad'),
+(3, 'Firewall perimetral',          'Red',           'Equipo de borde de la red de oficina');
+
+-- Mesa de ayuda no tiene hallazgos asignados (se usa en la prueba de borrado).
+INSERT INTO responsable (nombre, contacto) VALUES
+('Soporte de infraestructura', 'soporte@ejemplo.local'),
+('Desarrollo interno',         'desarrollo@ejemplo.local'),
+('Proveedor de hosting',       'mesa@proveedor.ejemplo'),
+('Mesa de ayuda',              'ayuda@ejemplo.local');
+
+-- Uno cerrado, uno en tratamiento, uno reabierto, dos pendientes y uno sin evaluar.
+INSERT INTO vulnerabilidad (id_activo, id_responsable, titulo, descripcion, tipo, elemento_afectado,
+                            fecha_deteccion, fecha_objetivo, estado, vector_cvss) VALUES
+(1, 3, 'TLS 1.0 y 1.1 habilitados', 'El servidor acepta versiones de TLS obsoletas.',
+ 'Configuración insegura', 'Puerto 443/TCP', '2026-08-18', '2026-09-15', 'CERRADA',
+ 'CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N'),
+(3, 2, 'Inyección SQL en la búsqueda de expedientes', 'El parámetro de búsqueda se concatena en la consulta.',
+ 'Inyección', 'Parámetro q de /expedientes/buscar', '2026-09-02', '2026-09-30', 'EN_TRATAMIENTO',
+ 'CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N'),
+(2, 2, 'XSS reflejado en el formulario de contacto', 'El campo nombre se devuelve sin codificar.',
+ 'Cross-site scripting', 'Campos nombre y asunto', '2026-09-05', '2026-10-05', 'PENDIENTE',
+ 'CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N'),
+(5, NULL, 'Panel del NAS con credenciales por defecto', 'La administración acepta la clave de fábrica.',
+ 'Autenticación débil', 'Interfaz web de administración', '2026-09-10', NULL, 'PENDIENTE',
+ 'CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H'),
+(1, NULL, 'Divulgación de versión en encabezados HTTP', 'El encabezado Server informa la versión de Apache.',
+ 'Divulgación de información', 'Encabezado Server', '2026-09-15', NULL, 'PENDIENTE',
+ 'CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N'),
+(4, NULL, 'Conexión a la base sin cifrado en la red interna', 'El servidor MySQL acepta conexiones sin TLS.',
+ 'Configuración insegura', 'Puerto 3306/TCP', '2026-09-21', NULL, 'PENDIENTE', NULL);
+
+-- El último estado_nuevo de cada hallazgo coincide con su estado actual.
+INSERT INTO seguimiento (id_vulnerabilidad, id_usuario, fecha_hora, estado_anterior, estado_nuevo, comentario) VALUES
+(1, 1, '2026-08-20 10:15:00', 'PENDIENTE',      'EN_TRATAMIENTO', 'Se pide al proveedor deshabilitar TLS 1.0 y 1.1.'),
+(1, 1, '2026-09-10 16:40:00', 'EN_TRATAMIENTO', 'CERRADA',        'Verificado con escaneo, solo responde TLS 1.2 y 1.3.'),
+(2, 1, '2026-09-03 09:30:00', 'PENDIENTE',      'EN_TRATAMIENTO', 'Desarrollo pasa la búsqueda a consultas parametrizadas.'),
+(3, 1, '2026-09-07 11:00:00', 'PENDIENTE',      'EN_TRATAMIENTO', 'Se agrega codificación de salida en el formulario.'),
+(3, 1, '2026-09-12 15:20:00', 'EN_TRATAMIENTO', 'CERRADA',        'Probado con carga de prueba en el campo nombre.'),
+(3, 1, '2026-09-19 12:05:00', 'CERRADA',        'PENDIENTE',      'Reapertura, el campo asunto sigue sin codificar.');
+
+SELECT 'usuario' AS tabla, COUNT(*) AS filas FROM usuario
+UNION ALL SELECT 'proyecto', COUNT(*) FROM proyecto
+UNION ALL SELECT 'activo', COUNT(*) FROM activo
+UNION ALL SELECT 'responsable', COUNT(*) FROM responsable
+UNION ALL SELECT 'vulnerabilidad', COUNT(*) FROM vulnerabilidad
+UNION ALL SELECT 'seguimiento', COUNT(*) FROM seguimiento;

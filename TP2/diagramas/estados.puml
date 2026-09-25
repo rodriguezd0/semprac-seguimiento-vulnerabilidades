@@ -1,0 +1,8 @@
+@startuml estados
+!include estilo.iuml
+hide empty description
+[*] --> PENDIENTE : CU03 registrar
+PENDIENTE --> EN_TRATAMIENTO : iniciar tratamiento\n[responsable y fecha objetivo]\n/ comentario
+EN_TRATAMIENTO --> CERRADA : cerrar\n[verificación realizada]\n/ comentario
+CERRADA --> PENDIENTE : reabrir\n/ comentario con el motivo
+@enduml

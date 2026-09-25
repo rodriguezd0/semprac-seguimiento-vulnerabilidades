@@ -1,0 +1,8 @@
+skinparam monochrome true
+skinparam shadowing false
+skinparam defaultFontName Calibri
+skinparam defaultFontSize 13
+skinparam BackgroundColor white
+skinparam roundCorner 6
+skinparam ArrowThickness 1
+skinparam dpi 150

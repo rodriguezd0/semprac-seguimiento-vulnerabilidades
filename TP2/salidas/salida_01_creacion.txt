@@ -1,0 +1,116 @@
+--------------
+DROP DATABASE IF EXISTS vulnerabilidades_db
+--------------
+
+Query OK, 6 rows affected (0.082 sec)
+
+--------------
+CREATE DATABASE vulnerabilidades_db
+  CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci
+--------------
+
+Query OK, 1 row affected (0.001 sec)
+
+--------------
+CREATE TABLE usuario (
+  id_usuario      INT AUTO_INCREMENT PRIMARY KEY,
+  nombre_acceso   VARCHAR(40)  NOT NULL UNIQUE,
+  nombre_completo VARCHAR(100) NOT NULL,
+  clave_hash      CHAR(64)     NOT NULL,
+  sal             CHAR(32)     NOT NULL,
+  rol             ENUM('ADMINISTRADOR','CLIENTE') NOT NULL,
+  activo          BOOLEAN      NOT NULL DEFAULT TRUE
+) ENGINE = InnoDB
+--------------
+
+Query OK, 0 rows affected (0.025 sec)
+
+--------------
+CREATE TABLE proyecto (
+  id_proyecto  INT AUTO_INCREMENT PRIMARY KEY,
+  nombre       VARCHAR(80)  NOT NULL UNIQUE,
+  descripcion  VARCHAR(255),
+  id_cliente   INT NOT NULL,
+  FOREIGN KEY (id_cliente) REFERENCES usuario (id_usuario)
+) ENGINE = InnoDB
+--------------
+
+Query OK, 0 rows affected (0.028 sec)
+
+--------------
+CREATE TABLE activo (
+  id_activo    INT AUTO_INCREMENT PRIMARY KEY,
+  id_proyecto  INT NOT NULL,
+  nombre       VARCHAR(80) NOT NULL,
+  tipo         VARCHAR(40) NOT NULL,
+  descripcion  VARCHAR(255),
+  FOREIGN KEY (id_proyecto) REFERENCES proyecto (id_proyecto)
+) ENGINE = InnoDB
+--------------
+
+Query OK, 0 rows affected (0.027 sec)
+
+--------------
+CREATE TABLE responsable (
+  id_responsable INT AUTO_INCREMENT PRIMARY KEY,
+  nombre         VARCHAR(100) NOT NULL UNIQUE,
+  contacto       VARCHAR(100)
+) ENGINE = InnoDB
+--------------
+
+Query OK, 0 rows affected (0.025 sec)
+
+--------------
+CREATE TABLE vulnerabilidad (
+  id_vulnerabilidad INT AUTO_INCREMENT PRIMARY KEY,
+  id_activo         INT NOT NULL,
+  id_responsable    INT NULL,
+  titulo            VARCHAR(150) NOT NULL,
+  descripcion       TEXT,
+  tipo              VARCHAR(60)  NOT NULL,
+  elemento_afectado VARCHAR(150),
+  fecha_deteccion   DATE NOT NULL,
+  fecha_objetivo    DATE NULL,
+  estado            ENUM('PENDIENTE','EN_TRATAMIENTO','CERRADA') NOT NULL DEFAULT 'PENDIENTE',
+  vector_cvss       VARCHAR(44) NULL,
+  FOREIGN KEY (id_activo)      REFERENCES activo (id_activo),
+  FOREIGN KEY (id_responsable) REFERENCES responsable (id_responsable),
+  CONSTRAINT ck_fecha_objetivo CHECK (fecha_objetivo IS NULL OR fecha_objetivo >= fecha_deteccion)
+) ENGINE = InnoDB
+--------------
+
+Query OK, 0 rows affected (0.026 sec)
+
+--------------
+CREATE TABLE seguimiento (
+  id_seguimiento    INT AUTO_INCREMENT PRIMARY KEY,
+  id_vulnerabilidad INT NOT NULL,
+  id_usuario        INT NOT NULL,
+  fecha_hora        DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  estado_anterior   ENUM('PENDIENTE','EN_TRATAMIENTO','CERRADA') NOT NULL,
+  estado_nuevo      ENUM('PENDIENTE','EN_TRATAMIENTO','CERRADA') NOT NULL,
+  comentario        VARCHAR(500) NOT NULL,
+  FOREIGN KEY (id_vulnerabilidad) REFERENCES vulnerabilidad (id_vulnerabilidad),
+  FOREIGN KEY (id_usuario)        REFERENCES usuario (id_usuario)
+) ENGINE = InnoDB
+--------------
+
+Query OK, 0 rows affected (0.023 sec)
+
+--------------
+SHOW TABLES
+--------------
+
++-------------------------------+
+| Tables_in_vulnerabilidades_db |
++-------------------------------+
+| activo                        |
+| proyecto                      |
+| responsable                   |
+| seguimiento                   |
+| usuario                       |
+| vulnerabilidad                |
++-------------------------------+
+6 rows in set (0.000 sec)
+
+Bye

@@ -1,0 +1,46 @@
+--------------
+DELETE FROM responsable WHERE nombre = 'Mesa de ayuda'
+--------------
+
+Query OK, 1 row affected (0.003 sec)
+
+--------------
+SELECT id_responsable, nombre FROM responsable
+--------------
+
++----------------+----------------------------+
+| id_responsable | nombre                     |
++----------------+----------------------------+
+|              2 | Desarrollo interno         |
+|              3 | Proveedor de hosting       |
+|              1 | Soporte de infraestructura |
++----------------+----------------------------+
+3 rows in set (0.000 sec)
+
+ERROR 1451 (23000) at line 14: Cannot delete or update a parent row: a foreign key constraint fails (`vulnerabilidades_db`.`vulnerabilidad`, CONSTRAINT `vulnerabilidad_ibfk_1` FOREIGN KEY (`id_activo`) REFERENCES `activo` (`id_activo`))
+--------------
+DELETE FROM activo WHERE id_activo = 1
+--------------
+
+--------------
+DELETE FROM activo WHERE id_activo = 6
+--------------
+
+Query OK, 1 row affected (0.003 sec)
+
+--------------
+SELECT id_activo, nombre FROM activo
+--------------
+
++-----------+------------------------------+
+| id_activo | nombre                       |
++-----------+------------------------------+
+|         1 | Servidor web                 |
+|         2 | Formulario de contacto       |
+|         3 | Aplicación de expedientes    |
+|         4 | Base de datos de expedientes |
+|         5 | NAS de respaldos             |
++-----------+------------------------------+
+5 rows in set (0.000 sec)
+
+Bye

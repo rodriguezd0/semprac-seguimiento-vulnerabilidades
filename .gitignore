@@ -1,0 +1,4 @@
+# Clases compiladas (se regeneran con javac)
+bin/
+*.class
+__pycache__/

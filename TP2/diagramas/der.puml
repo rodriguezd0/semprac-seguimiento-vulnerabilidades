@@ -1,0 +1,70 @@
+@startuml der
+!include estilo.iuml
+hide circle
+skinparam linetype ortho
+skinparam class {
+  BorderColor black
+  BackgroundColor white
+}
+entity usuario {
+  PK  id_usuario : INT
+  --
+  nombre_acceso : VARCHAR(40) UQ
+  nombre_completo : VARCHAR(100)
+  clave_hash : CHAR(64)
+  sal : CHAR(32)
+  rol : ENUM
+  activo : BOOLEAN
+}
+entity proyecto {
+  PK  id_proyecto : INT
+  --
+  nombre : VARCHAR(80) UQ
+  descripcion : VARCHAR(255)
+  FK  id_cliente : INT
+}
+entity activo {
+  PK  id_activo : INT
+  --
+  FK  id_proyecto : INT
+  nombre : VARCHAR(80)
+  tipo : VARCHAR(40)
+  descripcion : VARCHAR(255)
+}
+entity responsable {
+  PK  id_responsable : INT
+  --
+  nombre : VARCHAR(100) UQ
+  contacto : VARCHAR(100)
+}
+entity vulnerabilidad {
+  PK  id_vulnerabilidad : INT
+  --
+  FK  id_activo : INT
+  FK  id_responsable : INT (nulo)
+  titulo : VARCHAR(150)
+  descripcion : TEXT
+  tipo : VARCHAR(60)
+  elemento_afectado : VARCHAR(150)
+  fecha_deteccion : DATE
+  fecha_objetivo : DATE (nulo)
+  estado : ENUM
+  vector_cvss : VARCHAR(44) (nulo)
+}
+entity seguimiento {
+  PK  id_seguimiento : INT
+  --
+  FK  id_vulnerabilidad : INT
+  FK  id_usuario : INT
+  fecha_hora : DATETIME
+  estado_anterior : ENUM
+  estado_nuevo : ENUM
+  comentario : VARCHAR(500)
+}
+usuario ||-right-o{ proyecto
+proyecto ||-right-o{ activo
+activo ||-down-o{ vulnerabilidad
+vulnerabilidad }o-right-o| responsable
+seguimiento }o-right-|| vulnerabilidad
+usuario ||-down-o{ seguimiento
+@enduml

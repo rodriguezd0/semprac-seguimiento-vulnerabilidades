@@ -1,0 +1,31 @@
+Java 21.0.12.1
+
+== CP01 Caja negra: CalculadoraCvss31.categoria() ==
+PASA  categoria(null)                        esperado=Sin evaluar    obtenido=Sin evaluar
+PASA  categoria(-0.1)                        esperado=Rechazo        obtenido=Rechazo
+PASA  categoria(0.0)                         esperado=Ninguna        obtenido=Ninguna
+PASA  categoria(0.1)                         esperado=Baja           obtenido=Baja
+PASA  categoria(3.9)                         esperado=Baja           obtenido=Baja
+PASA  categoria(4.0)                         esperado=Media          obtenido=Media
+PASA  categoria(6.9)                         esperado=Media          obtenido=Media
+PASA  categoria(7.0)                         esperado=Alta           obtenido=Alta
+PASA  categoria(8.9)                         esperado=Alta           obtenido=Alta
+PASA  categoria(9.0)                         esperado=Crítica        obtenido=Crítica
+PASA  categoria(10.0)                        esperado=Crítica        obtenido=Crítica
+PASA  categoria(10.1)                        esperado=Rechazo        obtenido=Rechazo
+
+== CP02 Caja negra: calcularPuntaje() contra FIRST ==
+PASA  CVE-2013-1937 (XSS en phpMyAdmin)      esperado=6.1            obtenido=6.1
+PASA  CVE-2014-0160 (Heartbleed)             esperado=7.5            obtenido=7.5
+PASA  CVE-2014-6271 (Shellshock)             esperado=9.8            obtenido=9.8
+
+== CP03 Caja blanca: Vulnerabilidad.validarCambioEstado() ==
+   mensaje: Transición no permitida: PENDIENTE a CERRADA
+PASA  C1 PENDIENTE a CERRADA                 esperado=Rechazo        obtenido=Rechazo
+   mensaje: Falta responsable o fecha objetivo.
+PASA  C2 inicio sin asignación               esperado=Rechazo        obtenido=Rechazo
+   mensaje: El comentario es obligatorio.
+PASA  C3 comentario vacío                    esperado=Rechazo        obtenido=Rechazo
+PASA  C4 cambio válido                       esperado=EN_TRATAMIENTO obtenido=EN_TRATAMIENTO
+
+RESUMEN: 19 casos, 19 aprobados, 0 fallidos

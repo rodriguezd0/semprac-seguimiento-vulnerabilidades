@@ -1,0 +1,54 @@
+@startuml dominio
+!include estilo.iuml
+left to right direction
+hide circle
+hide methods
+skinparam classAttributeIconSize 0
+skinparam class {
+  BorderColor black
+  BackgroundColor white
+}
+class Usuario {
+  nombreAcceso
+  nombreCompleto
+  rol
+  activo
+}
+class Proyecto {
+  nombre
+  descripcion
+}
+class Activo {
+  nombre
+  tipo
+  descripcion
+}
+class Vulnerabilidad {
+  titulo
+  descripcion
+  tipo
+  elementoAfectado
+  fechaDeteccion
+  fechaObjetivo
+  estado
+  vectorCvss
+  /puntaje
+  /severidad
+}
+class Responsable {
+  nombre
+  contacto
+}
+class Seguimiento {
+  fechaHora
+  estadoAnterior
+  estadoNuevo
+  comentario
+}
+Usuario "1" -- "0..*" Proyecto : es cliente de >
+Proyecto "1" -- "0..*" Activo : agrupa >
+Activo "1" -- "0..*" Vulnerabilidad : presenta >
+Vulnerabilidad "0..*" -- "0..1" Responsable : se asigna a >
+Vulnerabilidad "1" -- "0..*" Seguimiento : acumula >
+Usuario "1" -- "0..*" Seguimiento : registra >
+@enduml

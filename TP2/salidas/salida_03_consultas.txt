@@ -1,0 +1,123 @@
+--------------
+SELECT v.id_vulnerabilidad AS id, p.nombre AS proyecto, a.nombre AS activo,
+       v.titulo, v.estado, r.nombre AS responsable, v.fecha_objetivo
+FROM vulnerabilidad v
+JOIN activo a           ON a.id_activo = v.id_activo
+JOIN proyecto p         ON p.id_proyecto = a.id_proyecto
+LEFT JOIN responsable r ON r.id_responsable = v.id_responsable
+WHERE v.estado <> 'CERRADA'
+ORDER BY v.fecha_deteccion
+--------------
+
++----+----------------------------+------------------------------+---------------------------------------------------+----------------+--------------------+----------------+
+| id | proyecto                   | activo                       | titulo                                            | estado         | responsable        | fecha_objetivo |
++----+----------------------------+------------------------------+---------------------------------------------------+----------------+--------------------+----------------+
+|  2 | Gestión de expedientes     | Aplicación de expedientes    | Inyección SQL en la búsqueda de expedientes       | EN_TRATAMIENTO | Desarrollo interno | 2026-09-30     |
+|  3 | Portal web institucional   | Formulario de contacto       | XSS reflejado en el formulario de contacto        | PENDIENTE      | Desarrollo interno | 2026-10-05     |
+|  4 | Infraestructura de oficina | NAS de respaldos             | Panel del NAS con credenciales por defecto        | PENDIENTE      | NULL               | NULL           |
+|  5 | Portal web institucional   | Servidor web                 | Divulgación de versión en encabezados HTTP        | PENDIENTE      | NULL               | NULL           |
+|  6 | Gestión de expedientes     | Base de datos de expedientes | Conexión a la base sin cifrado en la red interna  | PENDIENTE      | NULL               | NULL           |
++----+----------------------------+------------------------------+---------------------------------------------------+----------------+--------------------+----------------+
+5 rows in set (0.000 sec)
+
+--------------
+SELECT v.id_vulnerabilidad AS id, p.nombre AS proyecto, v.titulo, v.estado
+FROM vulnerabilidad v
+JOIN activo a   ON a.id_activo = v.id_activo
+JOIN proyecto p ON p.id_proyecto = a.id_proyecto
+WHERE p.id_cliente = 3
+ORDER BY v.id_vulnerabilidad
+--------------
+
++----+----------------------------+---------------------------------------------------+----------------+
+| id | proyecto                   | titulo                                            | estado         |
++----+----------------------------+---------------------------------------------------+----------------+
+|  2 | Gestión de expedientes     | Inyección SQL en la búsqueda de expedientes       | EN_TRATAMIENTO |
+|  4 | Infraestructura de oficina | Panel del NAS con credenciales por defecto        | PENDIENTE      |
+|  6 | Gestión de expedientes     | Conexión a la base sin cifrado en la red interna  | PENDIENTE      |
++----+----------------------------+---------------------------------------------------+----------------+
+3 rows in set (0.000 sec)
+
+--------------
+SELECT s.fecha_hora, s.estado_anterior, s.estado_nuevo, u.nombre_acceso AS usuario, s.comentario
+FROM seguimiento s
+JOIN usuario u ON u.id_usuario = s.id_usuario
+WHERE s.id_vulnerabilidad = 3
+ORDER BY s.fecha_hora
+--------------
+
++---------------------+-----------------+----------------+-------------+-----------------------------------------------------+
+| fecha_hora          | estado_anterior | estado_nuevo   | usuario     | comentario                                          |
++---------------------+-----------------+----------------+-------------+-----------------------------------------------------+
+| 2026-09-07 11:00:00 | PENDIENTE       | EN_TRATAMIENTO | dsrodriguez | Se agrega codificación de salida en el formulario.  |
+| 2026-09-12 15:20:00 | EN_TRATAMIENTO  | CERRADA        | dsrodriguez | Probado con carga de prueba en el campo nombre.     |
+| 2026-09-19 12:05:00 | CERRADA         | PENDIENTE      | dsrodriguez | Reapertura, el campo asunto sigue sin codificar.    |
++---------------------+-----------------+----------------+-------------+-----------------------------------------------------+
+3 rows in set (0.000 sec)
+
+--------------
+SELECT p.nombre AS proyecto, v.estado, COUNT(*) AS cantidad
+FROM vulnerabilidad v
+JOIN activo a   ON a.id_activo = v.id_activo
+JOIN proyecto p ON p.id_proyecto = a.id_proyecto
+GROUP BY p.nombre, v.estado
+ORDER BY p.nombre, v.estado
+--------------
+
++----------------------------+----------------+----------+
+| proyecto                   | estado         | cantidad |
++----------------------------+----------------+----------+
+| Gestión de expedientes     | PENDIENTE      |        1 |
+| Gestión de expedientes     | EN_TRATAMIENTO |        1 |
+| Infraestructura de oficina | PENDIENTE      |        1 |
+| Portal web institucional   | PENDIENTE      |        2 |
+| Portal web institucional   | CERRADA        |        1 |
++----------------------------+----------------+----------+
+5 rows in set (0.000 sec)
+
+--------------
+START TRANSACTION
+--------------
+
+Query OK, 0 rows affected (0.000 sec)
+
+--------------
+UPDATE vulnerabilidad
+   SET id_responsable = 1, fecha_objetivo = '2026-10-02', estado = 'EN_TRATAMIENTO'
+ WHERE id_vulnerabilidad = 4
+--------------
+
+Query OK, 1 row affected (0.000 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+--------------
+INSERT INTO seguimiento (id_vulnerabilidad, id_usuario, estado_anterior, estado_nuevo, comentario)
+VALUES (4, 1, 'PENDIENTE', 'EN_TRATAMIENTO', 'Soporte cambia la clave de fábrica del panel.')
+--------------
+
+Query OK, 1 row affected (0.000 sec)
+
+--------------
+COMMIT
+--------------
+
+Query OK, 0 rows affected (0.003 sec)
+
+--------------
+SELECT id_vulnerabilidad, estado, id_responsable, fecha_objetivo
+FROM vulnerabilidad WHERE id_vulnerabilidad = 4
+--------------
+
++-------------------+----------------+----------------+----------------+
+| id_vulnerabilidad | estado         | id_responsable | fecha_objetivo |
++-------------------+----------------+----------------+----------------+
+|                 4 | EN_TRATAMIENTO |              1 | 2026-10-02     |
++-------------------+----------------+----------------+----------------+
+1 row in set (0.000 sec)
+
+ERROR 4025 (23000) at line 56: CONSTRAINT `ck_fecha_objetivo` failed for `vulnerabilidades_db`.`vulnerabilidad`
+--------------
+UPDATE vulnerabilidad SET fecha_objetivo = '2026-01-01' WHERE id_vulnerabilidad = 5
+--------------
+
+Bye

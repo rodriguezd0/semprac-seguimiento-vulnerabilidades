@@ -1,0 +1,30 @@
+@startuml proceso_negocio
+!include estilo.iuml
+|Área tecnológica (administrador)|
+start
+:Detectar el hallazgo
+(revisión, alerta o aviso de un usuario);
+:Anotarlo en la planilla del área;
+:Estimar la gravedad con criterio propio;
+:Avisar al responsable por correo
+o mensajería;
+repeat
+  |Responsable de corrección|
+  :Corregir sobre el activo;
+  :Avisar que terminó;
+  |Área tecnológica (administrador)|
+  :Verificar la corrección;
+repeat while (¿Quedó resuelto?) is (no) not (sí)
+:Marcar la fila como resuelta;
+|Referente del proyecto|
+:Pedir el estado de sus hallazgos
+por correo o mensaje;
+note right
+  Puede pasar en cualquier
+  momento del proceso
+end note
+|Área tecnológica (administrador)|
+:Buscar en planilla y correos
+y responder;
+stop
+@enduml

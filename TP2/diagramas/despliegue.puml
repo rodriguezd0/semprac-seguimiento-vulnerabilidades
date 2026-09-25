@@ -1,0 +1,27 @@
+@startuml despliegue
+!include estilo.iuml
+node "PC del área tecnológica\n<<device>> Windows 10/11, 8 GB RAM" as PC {
+  node "<<execution environment>>\nJava 21 (JRE)" as JRE {
+    artifact "seguimiento-vulnerabilidades.jar" as JAR
+    component "Vista Swing" as V
+    component "Controladores" as C
+    component "Modelo" as M
+    component "DAO" as D
+    artifact "Connector/J\n(driver JDBC)" as DRV
+  }
+}
+node "Servidor de base de datos\n<<device>> PC o servidor de la LAN" as SRV {
+  node "<<execution environment>>\nXAMPP 8.2 (MariaDB 10.4)" as XAMPP {
+    database "vulnerabilidades_db" as DB
+  }
+}
+node "PC del referente (cliente)\n<<device>> Windows 10/11" as PCC {
+  artifact "seguimiento-vulnerabilidades.jar\n(perfil CLIENTE)" as JAR2
+}
+V ..> C
+C ..> M
+C ..> D
+D ..> DRV
+DRV -right- DB : TCP/IP puerto 3306\nJDBC (red interna)
+DB -down- JAR2 : TCP/IP puerto 3306\nJDBC (red interna)
+@enduml
