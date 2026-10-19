@@ -1,0 +1,172 @@
+========================================================================================
+Seguimiento de vulnerabilidades por proyecto | Prototipo de consola TP3
+========================================================================================
+Usuario (SALIR para terminar) > dsrodriguez
+Contraseña > **********
+Sesión iniciada. Daniel Sebastián Rodríguez (ADMINISTRADOR)
+
+Menú administrador
+  1. Listar vulnerabilidades
+  2. Buscar por número
+  3. Ordenar por puntaje CVSS
+  4. Registrar vulnerabilidad
+  5. Asignar responsable
+  6. Cambiar estado
+  0. Cerrar sesión
+Opción > 1
+Listado por número
+Proyectos visibles Portal web institucional, Gestión de expedientes, Infraestructura de oficina
+Nro  Título                                           Estado           CVSS  Severidad
+1    TLS 1.0 y 1.1 habilitados                        CERRADA           5,9  Media
+2    Inyección SQL en la búsqueda de expedientes      EN_TRATAMIENTO    8,1  Alta
+3    XSS reflejado en el formulario de contacto       PENDIENTE         6,1  Media
+4    Panel del NAS con credenciales por defecto       PENDIENTE         8,8  Alta
+5    Divulgación de versión en encabezados HTTP       PENDIENTE         5,3  Media
+6    Conexión a la base sin cifrado en la red interna PENDIENTE           -  Sin evaluar
+6 vulnerabilidades en el listado.
+
+Menú administrador
+  1. Listar vulnerabilidades
+  2. Buscar por número
+  3. Ordenar por puntaje CVSS
+  4. Registrar vulnerabilidad
+  5. Asignar responsable
+  6. Cambiar estado
+  0. Cerrar sesión
+Opción > 2
+Número de vulnerabilidad > 3
+Vulnerabilidad 3 | XSS reflejado en el formulario de contacto
+  Proyecto Portal web institucional | Activo Formulario de contacto
+  Tipo Cross-site scripting | Elemento afectado Campos nombre y asunto
+  Descripción El campo nombre se devuelve sin codificar.
+  Detectada el 05/09/2026 | Estado PENDIENTE | CVSS 6,1 (Media)
+  Responsable Desarrollo interno | Fecha objetivo 05/10/2026
+  Historial con 3 cambios
+    07/09/2026 11:00 | PENDIENTE a EN_TRATAMIENTO | dsrodriguez
+      Se agrega codificación de salida en el formulario.
+    12/09/2026 15:20 | EN_TRATAMIENTO a CERRADA | dsrodriguez
+      Probado con carga de prueba en el campo nombre.
+    19/09/2026 12:05 | CERRADA a PENDIENTE | dsrodriguez
+      Reapertura, el campo asunto sigue sin codificar.
+
+Menú administrador
+  1. Listar vulnerabilidades
+  2. Buscar por número
+  3. Ordenar por puntaje CVSS
+  4. Registrar vulnerabilidad
+  5. Asignar responsable
+  6. Cambiar estado
+  0. Cerrar sesión
+Opción > 4
+Activos
+  1 Servidor web (Portal web institucional)
+  2 Formulario de contacto (Portal web institucional)
+  3 Aplicación de expedientes (Gestión de expedientes)
+  4 Base de datos de expedientes (Gestión de expedientes)
+  5 NAS de respaldos (Infraestructura de oficina)
+  6 Firewall perimetral (Infraestructura de oficina)
+Número de activo > 6
+Título > Administración del firewall expuesta a Internet
+Descripción > La interfaz de administración responde desde fuera de la red interna.
+Tipo > Configuración insegura
+Elemento afectado > Puerto 8443/TCP
+Fecha de detección (dd/mm/aaaa) > 24/09/2026
+¿Evaluar con CVSS 3.1 ahora? (S/N) > S
+  AV Vector de ataque (N A L P) > N
+  AC Complejidad del ataque (L H) > L
+  PR Privilegios requeridos (N L H) > N
+  UI Interacción del usuario (N R) > N
+  S Alcance (U C) > U
+  C Confidencialidad (H L N) > H
+  I Integridad (H L N) > H
+  A Disponibilidad (H L N) > H
+Vulnerabilidad 7 registrada en estado PENDIENTE con CVSS 9,8 (Crítica).
+
+Menú administrador
+  1. Listar vulnerabilidades
+  2. Buscar por número
+  3. Ordenar por puntaje CVSS
+  4. Registrar vulnerabilidad
+  5. Asignar responsable
+  6. Cambiar estado
+  0. Cerrar sesión
+Opción > 3
+Listado ordenado por puntaje CVSS, de mayor a menor
+Proyectos visibles Portal web institucional, Gestión de expedientes, Infraestructura de oficina
+Nro  Título                                           Estado           CVSS  Severidad
+7    Administración del firewall expuesta a Internet  PENDIENTE         9,8  Crítica
+4    Panel del NAS con credenciales por defecto       PENDIENTE         8,8  Alta
+2    Inyección SQL en la búsqueda de expedientes      EN_TRATAMIENTO    8,1  Alta
+3    XSS reflejado en el formulario de contacto       PENDIENTE         6,1  Media
+1    TLS 1.0 y 1.1 habilitados                        CERRADA           5,9  Media
+5    Divulgación de versión en encabezados HTTP       PENDIENTE         5,3  Media
+6    Conexión a la base sin cifrado en la red interna PENDIENTE           -  Sin evaluar
+7 vulnerabilidades en el listado.
+
+Menú administrador
+  1. Listar vulnerabilidades
+  2. Buscar por número
+  3. Ordenar por puntaje CVSS
+  4. Registrar vulnerabilidad
+  5. Asignar responsable
+  6. Cambiar estado
+  0. Cerrar sesión
+Opción > 5
+Número de vulnerabilidad > 4
+Responsables
+  1 Soporte de infraestructura
+  2 Desarrollo interno
+  3 Proveedor de hosting
+  4 Mesa de ayuda
+Número de responsable > 1
+Fecha objetivo (dd/mm/aaaa) > 02/10/2026
+Vulnerabilidad 4 asignada a Soporte de infraestructura con fecha objetivo 02/10/2026.
+
+Menú administrador
+  1. Listar vulnerabilidades
+  2. Buscar por número
+  3. Ordenar por puntaje CVSS
+  4. Registrar vulnerabilidad
+  5. Asignar responsable
+  6. Cambiar estado
+  0. Cerrar sesión
+Opción > 6
+Número de vulnerabilidad > 4
+Estado actual PENDIENTE
+Estado nuevo (PENDIENTE, EN_TRATAMIENTO o CERRADA) > EN_TRATAMIENTO
+Comentario > Soporte cambia la clave de fábrica y limita el acceso al panel.
+Estado actualizado, PENDIENTE pasa a EN_TRATAMIENTO y el cambio queda en el historial.
+
+Menú administrador
+  1. Listar vulnerabilidades
+  2. Buscar por número
+  3. Ordenar por puntaje CVSS
+  4. Registrar vulnerabilidad
+  5. Asignar responsable
+  6. Cambiar estado
+  0. Cerrar sesión
+Opción > 2
+Número de vulnerabilidad > 4
+Vulnerabilidad 4 | Panel del NAS con credenciales por defecto
+  Proyecto Infraestructura de oficina | Activo NAS de respaldos
+  Tipo Autenticación débil | Elemento afectado Interfaz web de administración
+  Descripción La administración acepta la clave de fábrica.
+  Detectada el 10/09/2026 | Estado EN_TRATAMIENTO | CVSS 8,8 (Alta)
+  Responsable Soporte de infraestructura | Fecha objetivo 02/10/2026
+  Historial con 1 cambio
+    25/09/2026 05:46 | PENDIENTE a EN_TRATAMIENTO | dsrodriguez
+      Soporte cambia la clave de fábrica y limita el acceso al panel.
+
+Menú administrador
+  1. Listar vulnerabilidades
+  2. Buscar por número
+  3. Ordenar por puntaje CVSS
+  4. Registrar vulnerabilidad
+  5. Asignar responsable
+  6. Cambiar estado
+  0. Cerrar sesión
+Opción > 0
+Sesión cerrada.
+
+Usuario (SALIR para terminar) > SALIR
+Programa terminado.

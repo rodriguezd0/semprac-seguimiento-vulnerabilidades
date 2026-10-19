@@ -1,0 +1,52 @@
+dsrodriguez
+clave.equivocada
+dsrodriguez
+Admin.2026
+abc
+9
+2
+dos
+6
+4
+EN_TRATAMIENTO
+Se intenta iniciar el tratamiento sin asignar.
+6
+5
+CERRADA
+Se intenta cerrar sin pasar por el tratamiento.
+6
+5
+TERMINADA
+6
+2
+CERRADA
+
+5
+5
+1
+31/02/2026
+5
+5
+1
+01/09/2026
+4
+99
+4
+2
+Formulario de contacto sin límite de envíos
+El formulario acepta envíos repetidos sin control.
+Abuso de funcionalidad
+Formulario de contacto
+20/09/2026
+S
+X
+N
+L
+N
+N
+U
+N
+L
+L
+0
+SALIR

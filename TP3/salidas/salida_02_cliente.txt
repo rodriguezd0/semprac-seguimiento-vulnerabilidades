@@ -1,0 +1,73 @@
+========================================================================================
+Seguimiento de vulnerabilidades por proyecto | Prototipo de consola TP3
+========================================================================================
+Usuario (SALIR para terminar) > ref.expedientes
+Contraseña > ****************
+Sesión iniciada. Referente de gestión de expedientes (CLIENTE)
+
+Menú cliente
+  1. Listar mis vulnerabilidades
+  2. Buscar por número
+  3. Ordenar por puntaje CVSS
+  0. Cerrar sesión
+Opción > 1
+Listado por número
+Proyectos visibles Gestión de expedientes, Infraestructura de oficina
+Nro  Título                                           Estado           CVSS  Severidad
+2    Inyección SQL en la búsqueda de expedientes      EN_TRATAMIENTO    8,1  Alta
+4    Panel del NAS con credenciales por defecto       PENDIENTE         8,8  Alta
+6    Conexión a la base sin cifrado en la red interna PENDIENTE           -  Sin evaluar
+3 vulnerabilidades en el listado.
+
+Menú cliente
+  1. Listar mis vulnerabilidades
+  2. Buscar por número
+  3. Ordenar por puntaje CVSS
+  0. Cerrar sesión
+Opción > 2
+Número de vulnerabilidad > 2
+Vulnerabilidad 2 | Inyección SQL en la búsqueda de expedientes
+  Proyecto Gestión de expedientes | Activo Aplicación de expedientes
+  Tipo Inyección | Elemento afectado Parámetro q de /expedientes/buscar
+  Descripción El parámetro de búsqueda se concatena en la consulta.
+  Detectada el 02/09/2026 | Estado EN_TRATAMIENTO | CVSS 8,1 (Alta)
+  Responsable Desarrollo interno | Fecha objetivo 30/09/2026
+  Historial con 1 cambio
+    03/09/2026 09:30 | PENDIENTE a EN_TRATAMIENTO | dsrodriguez
+      Desarrollo pasa la búsqueda a consultas parametrizadas.
+
+Menú cliente
+  1. Listar mis vulnerabilidades
+  2. Buscar por número
+  3. Ordenar por puntaje CVSS
+  0. Cerrar sesión
+Opción > 2
+Número de vulnerabilidad > 1
+OPERACIÓN RECHAZADA. No hay una vulnerabilidad 1 entre sus proyectos.
+
+Menú cliente
+  1. Listar mis vulnerabilidades
+  2. Buscar por número
+  3. Ordenar por puntaje CVSS
+  0. Cerrar sesión
+Opción > 3
+Listado ordenado por puntaje CVSS, de mayor a menor
+Proyectos visibles Gestión de expedientes, Infraestructura de oficina
+Nro  Título                                           Estado           CVSS  Severidad
+4    Panel del NAS con credenciales por defecto       PENDIENTE         8,8  Alta
+2    Inyección SQL en la búsqueda de expedientes      EN_TRATAMIENTO    8,1  Alta
+6    Conexión a la base sin cifrado en la red interna PENDIENTE           -  Sin evaluar
+3 vulnerabilidades en el listado.
+
+Menú cliente
+  1. Listar mis vulnerabilidades
+  2. Buscar por número
+  3. Ordenar por puntaje CVSS
+  0. Cerrar sesión
+Opción > 4
+Opción inexistente, elija un número entre 0 y 3.
+Opción > 0
+Sesión cerrada.
+
+Usuario (SALIR para terminar) > SALIR
+Programa terminado.

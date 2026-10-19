@@ -1,0 +1,18 @@
+$ javac -version
+javac 21.0.12.1
+$ javac -encoding UTF-8 -Xlint:all -d bin src/modelo/*.java src/app/*.java
+Código de salida de javac 0 (sin errores ni advertencias)
+Clases compiladas 13
+  app/MenuConsola.class
+  app/SistemaVulnerabilidades.class
+  modelo/Activo.class
+  modelo/Administrador.class
+  modelo/CalculadoraCvss31.class
+  modelo/Cliente.class
+  modelo/EstadoVulnerabilidad.class
+  modelo/Proyecto.class
+  modelo/ReglaNegocioException.class
+  modelo/Responsable.class
+  modelo/Seguimiento.class
+  modelo/Usuario.class
+  modelo/Vulnerabilidad.class

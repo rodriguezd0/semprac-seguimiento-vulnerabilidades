@@ -1,0 +1,191 @@
+========================================================================================
+Seguimiento de vulnerabilidades por proyecto | Prototipo de consola TP3
+========================================================================================
+Usuario (SALIR para terminar) > dsrodriguez
+Contraseña > ****************
+ACCESO DENEGADO. Usuario o contraseña incorrectos.
+
+Usuario (SALIR para terminar) > dsrodriguez
+Contraseña > **********
+Sesión iniciada. Daniel Sebastián Rodríguez (ADMINISTRADOR)
+
+Menú administrador
+  1. Listar vulnerabilidades
+  2. Buscar por número
+  3. Ordenar por puntaje CVSS
+  4. Registrar vulnerabilidad
+  5. Asignar responsable
+  6. Cambiar estado
+  0. Cerrar sesión
+Opción > abc
+DATO INVÁLIDO. Escriba el número de la opción.
+Opción > 9
+Opción inexistente, elija un número entre 0 y 6.
+Opción > 2
+Número de vulnerabilidad > dos
+DATO INVÁLIDO. Se esperaba un número.
+
+Menú administrador
+  1. Listar vulnerabilidades
+  2. Buscar por número
+  3. Ordenar por puntaje CVSS
+  4. Registrar vulnerabilidad
+  5. Asignar responsable
+  6. Cambiar estado
+  0. Cerrar sesión
+Opción > 6
+Número de vulnerabilidad > 4
+Estado actual PENDIENTE
+Estado nuevo (PENDIENTE, EN_TRATAMIENTO o CERRADA) > EN_TRATAMIENTO
+Comentario > Se intenta iniciar el tratamiento sin asignar.
+OPERACIÓN RECHAZADA. Falta responsable o fecha objetivo (primero hay que asignarlo).
+
+Menú administrador
+  1. Listar vulnerabilidades
+  2. Buscar por número
+  3. Ordenar por puntaje CVSS
+  4. Registrar vulnerabilidad
+  5. Asignar responsable
+  6. Cambiar estado
+  0. Cerrar sesión
+Opción > 6
+Número de vulnerabilidad > 5
+Estado actual PENDIENTE
+Estado nuevo (PENDIENTE, EN_TRATAMIENTO o CERRADA) > CERRADA
+Comentario > Se intenta cerrar sin pasar por el tratamiento.
+OPERACIÓN RECHAZADA. Transición no permitida de PENDIENTE a CERRADA.
+
+Menú administrador
+  1. Listar vulnerabilidades
+  2. Buscar por número
+  3. Ordenar por puntaje CVSS
+  4. Registrar vulnerabilidad
+  5. Asignar responsable
+  6. Cambiar estado
+  0. Cerrar sesión
+Opción > 6
+Número de vulnerabilidad > 5
+Estado actual PENDIENTE
+Estado nuevo (PENDIENTE, EN_TRATAMIENTO o CERRADA) > TERMINADA
+DATO INVÁLIDO. No existe el estado TERMINADA.
+
+Menú administrador
+  1. Listar vulnerabilidades
+  2. Buscar por número
+  3. Ordenar por puntaje CVSS
+  4. Registrar vulnerabilidad
+  5. Asignar responsable
+  6. Cambiar estado
+  0. Cerrar sesión
+Opción > 6
+Número de vulnerabilidad > 2
+Estado actual EN_TRATAMIENTO
+Estado nuevo (PENDIENTE, EN_TRATAMIENTO o CERRADA) > CERRADA
+Comentario > 
+OPERACIÓN RECHAZADA. El comentario es obligatorio.
+
+Menú administrador
+  1. Listar vulnerabilidades
+  2. Buscar por número
+  3. Ordenar por puntaje CVSS
+  4. Registrar vulnerabilidad
+  5. Asignar responsable
+  6. Cambiar estado
+  0. Cerrar sesión
+Opción > 5
+Número de vulnerabilidad > 5
+Responsables
+  1 Soporte de infraestructura
+  2 Desarrollo interno
+  3 Proveedor de hosting
+  4 Mesa de ayuda
+Número de responsable > 1
+Fecha objetivo (dd/mm/aaaa) > 31/02/2026
+DATO INVÁLIDO. La fecha va como dd/mm/aaaa y tiene que existir.
+
+Menú administrador
+  1. Listar vulnerabilidades
+  2. Buscar por número
+  3. Ordenar por puntaje CVSS
+  4. Registrar vulnerabilidad
+  5. Asignar responsable
+  6. Cambiar estado
+  0. Cerrar sesión
+Opción > 5
+Número de vulnerabilidad > 5
+Responsables
+  1 Soporte de infraestructura
+  2 Desarrollo interno
+  3 Proveedor de hosting
+  4 Mesa de ayuda
+Número de responsable > 1
+Fecha objetivo (dd/mm/aaaa) > 01/09/2026
+OPERACIÓN RECHAZADA. La fecha objetivo no puede ser anterior a la detección.
+
+Menú administrador
+  1. Listar vulnerabilidades
+  2. Buscar por número
+  3. Ordenar por puntaje CVSS
+  4. Registrar vulnerabilidad
+  5. Asignar responsable
+  6. Cambiar estado
+  0. Cerrar sesión
+Opción > 4
+Activos
+  1 Servidor web (Portal web institucional)
+  2 Formulario de contacto (Portal web institucional)
+  3 Aplicación de expedientes (Gestión de expedientes)
+  4 Base de datos de expedientes (Gestión de expedientes)
+  5 NAS de respaldos (Infraestructura de oficina)
+  6 Firewall perimetral (Infraestructura de oficina)
+Número de activo > 99
+OPERACIÓN RECHAZADA. No existe el activo 99.
+
+Menú administrador
+  1. Listar vulnerabilidades
+  2. Buscar por número
+  3. Ordenar por puntaje CVSS
+  4. Registrar vulnerabilidad
+  5. Asignar responsable
+  6. Cambiar estado
+  0. Cerrar sesión
+Opción > 4
+Activos
+  1 Servidor web (Portal web institucional)
+  2 Formulario de contacto (Portal web institucional)
+  3 Aplicación de expedientes (Gestión de expedientes)
+  4 Base de datos de expedientes (Gestión de expedientes)
+  5 NAS de respaldos (Infraestructura de oficina)
+  6 Firewall perimetral (Infraestructura de oficina)
+Número de activo > 2
+Título > Formulario de contacto sin límite de envíos
+Descripción > El formulario acepta envíos repetidos sin control.
+Tipo > Abuso de funcionalidad
+Elemento afectado > Formulario de contacto
+Fecha de detección (dd/mm/aaaa) > 20/09/2026
+¿Evaluar con CVSS 3.1 ahora? (S/N) > S
+  AV Vector de ataque (N A L P) > X
+  Valor no válido, las opciones son N A L P.
+  AV Vector de ataque (N A L P) > N
+  AC Complejidad del ataque (L H) > L
+  PR Privilegios requeridos (N L H) > N
+  UI Interacción del usuario (N R) > N
+  S Alcance (U C) > U
+  C Confidencialidad (H L N) > N
+  I Integridad (H L N) > L
+  A Disponibilidad (H L N) > L
+Vulnerabilidad 7 registrada en estado PENDIENTE con CVSS 6,5 (Media).
+
+Menú administrador
+  1. Listar vulnerabilidades
+  2. Buscar por número
+  3. Ordenar por puntaje CVSS
+  4. Registrar vulnerabilidad
+  5. Asignar responsable
+  6. Cambiar estado
+  0. Cerrar sesión
+Opción > 0
+Sesión cerrada.
+
+Usuario (SALIR para terminar) > SALIR
+Programa terminado.
