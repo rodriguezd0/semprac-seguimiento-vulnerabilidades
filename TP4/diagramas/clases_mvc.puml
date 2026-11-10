@@ -1,0 +1,96 @@
+@startuml clases_mvc
+' TP4: clases de la versión final ordenadas por capa del patrón MVC (el modelo está detallado en clases_diseno_modelo)
+!include estilo.iuml
+allowmixing
+skinparam classAttributeIconSize 0
+hide circle
+hide empty members
+skinparam nodesep 30
+skinparam ranksep 40
+skinparam class {
+  BorderColor black
+  BackgroundColor white
+}
+skinparam package {
+  BorderColor black
+  BackgroundColor white
+}
+package "vista (Swing)" as vista {
+  class VentanaLogin {
+    - ingresar()
+  }
+  class VentanaPrincipal {
+    - actualizarTabla()
+    - cambiarEstado()
+    - historial()
+    - exportar()
+    - importar()
+  }
+  class DialogoRegistro {
+    - guardar()
+  }
+}
+package "controlador" {
+  class ControladorVulnerabilidades {
+    - vulnerabilidadDAO : VulnerabilidadDAO
+    + iniciarSesion(acceso, clave) : Usuario
+    + listar(proyecto, estado, severidad)
+    + registrar(activo, titulo, ...) : int
+    + cambiarEstado(v, nuevo, comentario, ...)
+    + historial(v) : ArrayList<Seguimiento>
+    + contarPorSeveridad(lista) : int[]
+    + exportar(lista, filtros) : File
+    + importar(archivo) : ArrayList<String>
+  }
+}
+package "modelo" {
+  class "Usuario, Vulnerabilidad,\nSeguimiento y demás\n(figura 6)" as Modelo
+}
+package "util" {
+  class ArchivoTexto <<utilidad>> {
+    + {static} guardar(carpeta, prefijo, lineas) : File
+    + {static} leerLineas(archivo) : ArrayList<String>
+  }
+}
+package "dao (JDBC)" as dao {
+  interface VulnerabilidadDAO <<interface>> {
+    + listar(usuario)
+    + insertar(v) : int
+    + guardarCambioEstado(v, s)
+    + historial(idVulnerabilidad)
+  }
+  class VulnerabilidadDAOMySQL
+  class UsuarioDAO {
+    + buscarPorAcceso(acceso) : Usuario
+  }
+  class CatalogoDAO {
+    + proyectos(usuario)
+    + activos()
+    + responsables()
+  }
+  class ConexionBD <<utilidad>> {
+    + {static} obtener() : Connection
+  }
+  class PersistenciaException <<excepción>>
+}
+database "vulnerabilidades_db\n(MySQL)" as BD
+
+VentanaLogin -[hidden]right- VentanaPrincipal
+VentanaPrincipal -[hidden]right- DialogoRegistro
+CatalogoDAO -[hidden]down- UsuarioDAO
+Modelo -[hidden]down- ArchivoTexto
+VentanaLogin --> ControladorVulnerabilidades
+VentanaPrincipal --> ControladorVulnerabilidades
+DialogoRegistro --> ControladorVulnerabilidades
+ControladorVulnerabilidades ..> Modelo : valida reglas
+ControladorVulnerabilidades ..> ArchivoTexto
+ControladorVulnerabilidades --> VulnerabilidadDAO
+ControladorVulnerabilidades --> UsuarioDAO
+ControladorVulnerabilidades --> CatalogoDAO
+VulnerabilidadDAOMySQL .up.|> VulnerabilidadDAO
+VulnerabilidadDAOMySQL ..> ConexionBD
+UsuarioDAO ..> ConexionBD
+CatalogoDAO ..> ConexionBD
+ConexionBD ..> PersistenciaException : lanza
+ConexionBD ..> BD : JDBC
+@enduml

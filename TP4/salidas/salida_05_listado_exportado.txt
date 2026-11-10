@@ -1,0 +1,14 @@
+Listado de vulnerabilidades | Seguimiento de vulnerabilidades por proyecto
+Generado el 30/10/2026 04:45 por dsrodriguez
+Filtros Proyecto Todos | Estado Todos | Severidad Todas
+====================================================================================================================
+ID   Título                                           Estado           CVSS  Severidad    Proyecto
+7    Administración del firewall expuesta a Internet  PENDIENTE         9,8  Crítica      Infraestructura de oficina
+4    Panel del NAS con credenciales por defecto       EN_TRATAMIENTO    8,8  Alta         Infraestructura de oficina
+2    Inyección SQL en la búsqueda de expedientes      EN_TRATAMIENTO    8,1  Alta         Gestión de expedientes
+3    XSS reflejado en el formulario de contacto       PENDIENTE         6,1  Media        Portal web institucional
+1    TLS 1.0 y 1.1 habilitados                        CERRADA           5,9  Media        Portal web institucional
+5    Divulgación de versión en encabezados HTTP       PENDIENTE         5,3  Media        Portal web institucional
+6    Conexión a la base sin cifrado en la red interna PENDIENTE           -  Sin evaluar  Gestión de expedientes
+====================================================================================================================
+7 hallazgos | Crítica 1 | Alta 2 | Media 3 | Baja 0 | Ninguna 0 | Sin evaluar 1

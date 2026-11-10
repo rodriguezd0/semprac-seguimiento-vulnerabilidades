@@ -1,0 +1,6 @@
+Fila 2. Registrada como hallazgo 8.
+Fila 3. Registrada como hallazgo 9.
+Fila 4. Rechazada. La fecha va como dd/mm/aaaa y tiene que existir.
+Fila 5. Rechazada. No existe el activo Impresora del primer piso en el proyecto Infraestructura de oficina.
+Fila 6. Registrada como hallazgo 10.
+Fila 7. Rechazada. Vector CVSS inválido (Valor de métrica inválido: X).

@@ -1,0 +1,33 @@
+$ /c/xampp/mysql/bin/mysql.exe -u root -h 127.0.0.1 -P 3307 -t < sql/03_verificacion.sql
++-------------------+----------------------------+------------------------------+---------------------------------------------------+-----------+----------------------------------------------+
+| id_vulnerabilidad | proyecto                   | activo                       | titulo                                            | estado    | vector_cvss                                  |
++-------------------+----------------------------+------------------------------+---------------------------------------------------+-----------+----------------------------------------------+
+|                10 | Portal web institucional   | Formulario de contacto       | Formulario sin límite de envíos                   | PENDIENTE | CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L |
+|                 9 | Gestión de expedientes     | Aplicación de expedientes    | Sesión sin vencimiento por inactividad            | PENDIENTE | NULL                                         |
+|                 8 | Portal web institucional   | Servidor web                 | Listado de directorios habilitado en /descargas   | PENDIENTE | CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N |
+|                 7 | Infraestructura de oficina | Firewall perimetral          | Administración del firewall expuesta a Internet   | PENDIENTE | CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H |
+|                 6 | Gestión de expedientes     | Base de datos de expedientes | Conexión a la base sin cifrado en la red interna  | PENDIENTE | NULL                                         |
++-------------------+----------------------------+------------------------------+---------------------------------------------------+-----------+----------------------------------------------+
++----------------+-------------------+---------------+---------------------+-----------------+----------------+------------------------------------------------------------------+
+| id_seguimiento | id_vulnerabilidad | nombre_acceso | fecha_hora          | estado_anterior | estado_nuevo   | comentario                                                       |
++----------------+-------------------+---------------+---------------------+-----------------+----------------+------------------------------------------------------------------+
+|              7 |                 4 | dsrodriguez   | 2026-10-30 04:45:12 | PENDIENTE       | EN_TRATAMIENTO | Soporte cambia la clave de fábrica y limita el acceso al panel.  |
+|              6 |                 3 | dsrodriguez   | 2026-09-19 12:05:00 | CERRADA         | PENDIENTE      | Reapertura, el campo asunto sigue sin codificar.                 |
+|              5 |                 3 | dsrodriguez   | 2026-09-12 15:20:00 | EN_TRATAMIENTO  | CERRADA        | Probado con carga de prueba en el campo nombre.                  |
+|              4 |                 3 | dsrodriguez   | 2026-09-07 11:00:00 | PENDIENTE       | EN_TRATAMIENTO | Se agrega codificación de salida en el formulario.               |
+|              3 |                 2 | dsrodriguez   | 2026-09-03 09:30:00 | PENDIENTE       | EN_TRATAMIENTO | Desarrollo pasa la búsqueda a consultas parametrizadas.          |
++----------------+-------------------+---------------+---------------------+-----------------+----------------+------------------------------------------------------------------+
++-------------------+----------------+--------------------+
+| id_vulnerabilidad | estado         | ultimo_seguimiento |
++-------------------+----------------+--------------------+
+|                 1 | CERRADA        | CERRADA            |
+|                 2 | EN_TRATAMIENTO | EN_TRATAMIENTO     |
+|                 3 | PENDIENTE      | PENDIENTE          |
+|                 4 | EN_TRATAMIENTO | EN_TRATAMIENTO     |
+|                 5 | PENDIENTE      | NULL               |
+|                 6 | PENDIENTE      | NULL               |
+|                 7 | PENDIENTE      | NULL               |
+|                 8 | PENDIENTE      | NULL               |
+|                 9 | PENDIENTE      | NULL               |
+|                10 | PENDIENTE      | NULL               |
++-------------------+----------------+--------------------+

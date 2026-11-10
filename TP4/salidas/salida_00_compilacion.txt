@@ -1,0 +1,5 @@
+$ javac -version
+javac 21.0.12.1
+$ javac -encoding UTF-8 -Xlint:all -d bin -cp lib/mysql-connector-j-8.4.0.jar (los 23 archivos de src)
+Código de salida de javac 0 (sin errores ni advertencias)
+Clases del sistema 23

@@ -1,0 +1,19 @@
+$ /c/xampp/mysql/bin/mysql.exe -u root -h 127.0.0.1 -P 3307 < sql/01_creacion.sql
+Tables_in_vulnerabilidades_db
+activo
+proyecto
+responsable
+seguimiento
+usuario
+vulnerabilidad
+$ /c/xampp/mysql/bin/mysql.exe -u root -h 127.0.0.1 -P 3307 -t < sql/02_insercion.sql
++----------------+-------+
+| tabla          | filas |
++----------------+-------+
+| usuario        |     3 |
+| proyecto       |     3 |
+| activo         |     6 |
+| responsable    |     4 |
+| vulnerabilidad |     6 |
+| seguimiento    |     6 |
++----------------+-------+

@@ -1,0 +1,30 @@
+Pruebas de la versión final | 30/10/2026 04:45:00
+Sesión del administrador
+  captura cap_01_login.png (415 x 209)
+  PASA  | CP05 | filas que ve el administrador al ingresar | esperado 6 | obtenido 6
+  captura cap_03_registro_cvss.png (714 x 423)
+  PASA  | CP07 | hallazgo 7 guardado en la base (estado y puntaje) | esperado PENDIENTE 9.8 | obtenido PENDIENTE 9.8
+  PASA  | CP07 | el hallazgo nuevo aparece en la tabla | esperado 7 | obtenido 7
+  captura cap_04_cambio_estado.png (608 x 313)
+  PASA  | CP08 | hallazgo 4 en la base (estado, responsable y fecha objetivo) | esperado EN_TRATAMIENTO 1 2026-11-13 | obtenido EN_TRATAMIENTO 1 2026-11-13
+  PASA  | CP08 | un seguimiento más, guardado en la misma transacción | esperado 7 | obtenido 7
+  captura cap_05_historial.png (851 x 244)
+  captura cap_06_exportacion.png (983 x 364)
+  PASA  | CP09 | archivo nuevo en la carpeta exportaciones | esperado 1 | obtenido 1
+  PASA  | CP09 | el archivo tiene las 7 filas del listado más 7 líneas de encabezado y pie | esperado 14 | obtenido 14
+  captura cap_07_importacion.png (843 x 228)
+  PASA  | CP09 | hallazgos agregados desde la planilla | esperado 10 | obtenido 10
+  PASA  | CP09 | filas rechazadas en el informe | esperado 3 | obtenido 3
+  captura cap_02_principal_administrador.png (1221 x 403)
+  PASA  | CP05 | primera fila, la de mayor puntaje | esperado 7 | obtenido 7
+Sesión del cliente ref.expedientes
+  PASA  | CP05 | hallazgos que ve el cliente (sus dos proyectos) | esperado 7 4 2 6 9 | obtenido 7 4 2 6 9
+  PASA  | CP05 | botón Nuevo hallazgo para el cliente | esperado no existe | obtenido no existe
+  captura cap_08_principal_cliente.png (1221 x 403)
+Prueba de rollback con un error forzado en el INSERT del seguimiento
+  mensaje para el usuario | No se pudo guardar el cambio de estado, la base quedó como estaba.
+  causa | SQLIntegrityConstraintViolationException, código de error 1452
+  PASA  | CP08 | el DAO informa el error | esperado PersistenciaException | obtenido PersistenciaException
+  PASA  | CP08 | hallazgo 5 sin cambios después del rollback | esperado PENDIENTE sin responsable | obtenido PENDIENTE sin responsable
+  PASA  | CP08 | seguimientos sin cambios después del rollback | esperado 7 | obtenido 7
+RESUMEN 15 verificaciones, 15 aprobadas, 0 fallidas

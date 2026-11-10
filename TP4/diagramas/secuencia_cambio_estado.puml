@@ -1,0 +1,50 @@
+@startuml secuencia_cambio_estado
+' TP4: secuencia de diseño de CU06 en la versión final (MVC, transacción JDBC y excepciones)
+!include estilo.iuml
+skinparam sequenceMessageAlign center
+skinparam maxMessageSize 150
+skinparam ParticipantPadding 4
+hide footbox
+actor "Administrador" as A
+participant "Ventana\nPrincipal\n«vista»" as VP
+participant "Controlador\nVulnerabilidades\n«controlador»" as C
+participant "Vulnerabilidad\n«modelo»" as V
+participant "Vulnerabilidad\nDAOMySQL\n«dao»" as D
+database "MySQL" as BD
+
+A -> VP : elige estado nuevo y escribe el comentario
+activate VP
+VP -> C : cambiarEstado(...)
+activate C
+C -> V : asignar(...) si inicia el tratamiento sin asignación
+C -> V : cambiarEstado(nuevo, comentario)
+activate V
+V -> V : validarCambioEstado()
+alt alguna regla no se cumple
+  V --> C : ReglaNegocioException
+  C --> VP : ReglaNegocioException
+  VP --> A : «Operación rechazada»
+else reglas cumplidas
+  V --> C : estado anterior
+  deactivate V
+  C -> D : guardarCambioEstado(v, seguimiento)
+  activate D
+  D -> BD : setAutoCommit(false), UPDATE vulnerabilidad
+  D -> BD : INSERT seguimiento
+  alt las dos escrituras salen bien
+    D -> BD : commit()
+    D --> C
+    C --> VP
+    VP --> A : «Estado actualizado»
+  else SQLException
+    D -> BD : rollback()
+    D --> C : PersistenciaException
+    deactivate D
+    C --> VP : PersistenciaException
+    VP --> A : «Error de la base de datos»
+  end
+end
+deactivate C
+VP -> VP : actualizarTabla()
+deactivate VP
+@enduml

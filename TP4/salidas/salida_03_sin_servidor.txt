@@ -1,0 +1,7 @@
+Pruebas de la versión final | 30/10/2026 04:45:34
+Inicio de sesión sin servidor de base de datos
+  mensaje de la ventana | No se pudo conectar con la base de datos. Verifique que MySQL esté iniciado y que exista vulnerabilidades_db.
+  PASA  | CP10 | la ventana de acceso informa el error | esperado No se pudo conectar | obtenido No se pudo conectar
+  PASA  | CP10 | la contraseña se borra aunque falle (finally) | esperado 0 | obtenido 0
+  captura cap_09_login_sin_servidor.png (415 x 227)
+RESUMEN 2 verificaciones, 2 aprobadas, 0 fallidas

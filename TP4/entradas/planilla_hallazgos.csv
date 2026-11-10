@@ -1,0 +1,7 @@
+proyecto;activo;titulo;tipo;elemento_afectado;fecha_deteccion;vector_cvss;descripcion
+Portal web institucional;Servidor web;Listado de directorios habilitado en /descargas;Configuración insegura;Ruta /descargas;14/10/2026;CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N;El servidor muestra el índice de archivos de la carpeta.
+Gestión de expedientes;Aplicación de expedientes;Sesión sin vencimiento por inactividad;Gestión de sesiones;Módulo de búsqueda;20/10/2026;;La sesión sigue abierta después de horas sin uso.
+Infraestructura de oficina;NAS de respaldos;Firmware del NAS desactualizado;Software desactualizado;Firmware del equipo;31/02/2026;CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H;La fecha quedó mal cargada en la planilla.
+Infraestructura de oficina;Impresora del primer piso;Panel de la impresora sin clave;Autenticación débil;Panel web;22/10/2026;;Ese activo todavía no está dado de alta.
+Portal web institucional;Formulario de contacto;Formulario sin límite de envíos;Abuso de funcionalidad;Formulario de contacto;23/10/2026;CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L;Permite enviar mensajes sin límite.
+Gestión de expedientes;Base de datos de expedientes;Usuario de la aplicación con permisos de más;Permisos excesivos;Usuario app_expedientes;27/10/2026;CVSS:3.1/AV:N/AC:L/PR:X/UI:N/S:U/C:H/I:H/A:N;El vector tiene un valor que no existe en CVSS.
